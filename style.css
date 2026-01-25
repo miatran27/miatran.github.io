@@ -1,16 +1,25 @@
+@font-face {
+    font-family: 'Graph FF Condensed';
+    src: url('GraphFFCondensed-Black.woff2') format('woff2'),
+        url('GraphFFCondensed-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
-    --color: black;
-    --background:#ddd;
+    --color: tomato;
+    --background:#ffffff;
 
     --body-copy: 1rem;
     --heading-copy: calc(var(--body-copy) * 2);
 
     --gutter: 2rem;
-    --vertical: 4rem;
+    --vertical: 2.5rem;
 }
 
 body {
-    font-family: sans-serif;
+    font-family:'Graph FF Condensed';
     color: var(--color);
     background-color: var(--background);
     font-size: var(--body-copy);
@@ -20,9 +29,13 @@ body {
     align-items: center;
 }
 
+main p {
+padding-block-end: 2rem;
+}
+
 /* Wanted a cool pattern behind my work */
 /* Found this pattern collection: https://css-pattern.com/ */
-/* I learned that i can change the CSS styles in background style template */
+/* I learned that i can change the CSS styles of the background in the code template */
 
 body {
   --s: 80px; /* control the size*/
@@ -42,11 +55,17 @@ body {
 main {
     padding-inline: var(--gutter);
     padding-block: var(--vertical);
+    font-size: calc(var(--heading-copy) * 2);
+    color: black;
+    /* margin-inline: auto;
+    text-align: center; */
 }
 
 h1 {
-    font-size: var(--heading-copy);
+    font-size: calc(var(--heading-copy) * 2);
+    padding-block-end: 1rem;
 }
+
 
 ul {
     padding-inline: var(--gutter);
@@ -54,15 +73,17 @@ ul {
     gap: var(--gutter)
 }
 
-/* hgroup, footer {
-    color: var(--background);
-    background-color: var(--color);
-    padding-inline: var(--gutter);
-} */
-
 .reverse {
     padding-block: var(--vertical);
     color: var(--background);
     background-color: var(--color);
     padding-inline: var(--gutter);
+}
+
+footer, hgroup p {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration-line: underline;
 }
