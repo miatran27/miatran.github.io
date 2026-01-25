@@ -1,6 +1,6 @@
 :root {
     --color: black;
-    --background-color:#ddd;
+    --background:#ddd;
 
     --body-copy: 1rem;
     --heading-copy: calc(var(--body-copy) * 2);
