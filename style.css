@@ -1,14 +1,16 @@
 :root {
-    --color: red;
-    --background-color: #ddd;
+    --color: black;
+    --background-color:#ddd;
 
     --body-copy: 1rem;
-    --heading-copy: calc(var(--body-copy) *2);
+    --heading-copy: calc(var(--body-copy) * 2);
 
     --gutter: 2rem;
+    --vertical: 4rem;
 }
 
 body {
+    font-family: sans-serif;
     color: var(--color);
     background-color: var(--background);
     font-size: var(--body-copy);
@@ -18,8 +20,31 @@ body {
     align-items: center;
 }
 
+/* Wanted a cool pattern behind my work */
+/* Found this pattern collection: https://css-pattern.com/ */
+/* I learned that i can change the CSS styles in background style template */
+body {
+  --s: 95px; /* control the size*/
+  --c1: #f8b195;
+  --c2: #355c7d;
+  
+  --_g: 
+     var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
+     var(--c2) 46% 54%,var(--c1) 56% 64%,var(--c2) 66% 74%,var(--c1) 76% 84%,var(--c2) 86% 94%;
+  background:
+    radial-gradient(100% 100% at 100% 0,var(--c1) 4%,var(--_g),#0008 96%,#0000),
+    radial-gradient(100% 100% at 0 100%,#0000, #0008 4%,var(--_g),var(--c1) 96%)
+    var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+main {
+    padding-inline: var(--gutter);
+    padding-block: var(--vertical);
+}
+
 h1 {
-    font-size: var (--heading-copy);
+    font-size: var(--heading-copy);
 }
 
 ul {
@@ -28,7 +53,14 @@ ul {
     gap: var(--gutter)
 }
 
-hgroup, footer {
+/* hgroup, footer {
+    color: var(--background);
+    background-color: var(--color);
+    padding-inline: var(--gutter);
+} */
+
+.reverse {
+    padding-block: var(--vertical);
     color: var(--background);
     background-color: var(--color);
     padding-inline: var(--gutter);
